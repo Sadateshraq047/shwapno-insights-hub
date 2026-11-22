@@ -165,6 +165,37 @@
   .card-links a.primary:hover{background:var(--red-deep); border-color:var(--red-deep);}
   .card-links a.disabled{opacity:.4; pointer-events:none;}
 
+
+  .card-links button.fab{
+    font:inherit; font-size:13px; font-weight:600; display:flex; align-items:center; gap:6px; cursor:pointer;
+    padding:10px 13px; border:1px solid var(--line); border-radius:2px; flex:1; justify-content:center;
+    background:transparent; color:var(--ink); transition:border-color .15s, background .15s;
+  }
+  .card-links button.fab:hover{border-color:var(--ink); background:var(--surface-2);}
+  dialog.fabric{
+    border:1px solid var(--line); border-top:3px solid var(--red); border-radius:3px; padding:0;
+    background:var(--surface); color:var(--ink); width:min(480px,92vw);
+  }
+  dialog.fabric::backdrop{background:rgba(20,10,8,.55);}
+  .fabric-in{padding:24px 24px 22px; display:flex; flex-direction:column; gap:14px;}
+  .fabric-in h3{font-size:19px; margin:0;}
+  .fabric-in p{font-size:13.5px; color:var(--ink-soft); margin:0;}
+  .cred{display:flex; flex-direction:column; gap:5px;}
+  .cred label{font-size:11.5px; font-family:"IBM Plex Mono",monospace; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.06em;}
+  .cred-row{display:flex; gap:8px;}
+  .cred-row code{flex:1; min-width:0; overflow-wrap:anywhere; font-family:"IBM Plex Mono",monospace; font-size:13.5px; padding:9px 11px; background:var(--surface-2); border-radius:2px;}
+  .mini{font:inherit; font-size:12.5px; font-weight:600; cursor:pointer; padding:0 12px; border:1px solid var(--line); border-radius:2px; background:transparent; color:var(--ink);}
+  .mini:hover{border-color:var(--ink); background:var(--surface-2);}
+  .fabric-actions{display:flex; gap:10px; margin-top:4px;}
+  .fabric-actions a,.fabric-actions button{
+    font:inherit; font-size:13px; font-weight:600; text-decoration:none; text-align:center; cursor:pointer; flex:1;
+    padding:11px 13px; border:1px solid var(--line); border-radius:2px; background:transparent; color:var(--ink);
+  }
+  .fabric-actions a.primary{background:var(--red); border-color:var(--red); color:#fff;}
+  .fabric-actions a.primary:hover{background:var(--red-deep); border-color:var(--red-deep);}
+  .rn-cred{margin:6px 0 14px; padding:12px 14px; border:1px dashed var(--line); border-radius:3px; background:var(--surface-2); font-size:13.5px; line-height:1.7;}
+  .rn-cred code{font-family:"IBM Plex Mono",monospace; font-size:13px;}
+
   .demo-note{
     margin-top:26px; padding:14px 16px; border:1px dashed var(--line); border-radius:3px;
     font-size:13px; color:var(--ink-soft); background:var(--surface);
@@ -245,7 +276,7 @@
     <div class="section-head">
       <p class="eyebrow">Dashboards &amp; Reports</p>
       <h2 style="margin-top:12px;">Dashboards</h2>
-      <p>Each card opens the live Power BI report and its Excel report on Google Drive.</p>
+      <p>Each card opens the live Power BI report and its Excel report on Google Drive. You can also sign in to our Fabric account to download tables directly.</p>
     </div>
 
     <div class="grid">
@@ -263,6 +294,7 @@
           <div class="card-links">
             <a class="primary" href="https://app.powerbi.com/view?r=eyJrIjoiNzVlZjhiODktMzJjYy00MmU0LTg2OWQtN2Y2ODhiZTA5ODA3IiwidCI6IjNjZDA3OTg4LTUyNjMtNDA2NC1hZDU1LWU5NTZhYjNkZDExNyIsImMiOjEwfQ%3D%3D" target="_blank" rel="noopener">Open dashboard ↗</a>
             <a href="https://drive.google.com/drive/folders/1yw7DVpGgqHFjIOTkP-wZRAJW3TMsdYyB?usp=sharing" target="_blank" rel="noopener">Excel report ↗</a>
+            <button type="button" class="fab" data-fabric="pricing">Fabric login ↗</button>
           </div>
         </div>
       </article>
@@ -280,6 +312,7 @@
           <div class="card-links">
             <a class="primary" href="https://app.powerbi.com/view?r=eyJrIjoiMDk4MjIwOTgtZDNmMi00NjJiLWJmOTEtMTcwM2YwZTVlOWNjIiwidCI6IjNjZDA3OTg4LTUyNjMtNDA2NC1hZDU1LWU5NTZhYjNkZDExNyIsImMiOjEwfQ%3D%3D" target="_blank" rel="noopener">Open dashboard ↗</a>
             <a href="https://drive.google.com/drive/folders/1V0N2T72S-TmO2TppVB0BLchk_IdqjqYZ?usp=drive_link" target="_blank" rel="noopener">Excel report ↗</a>
+            <button type="button" class="fab" data-fabric="receiving">Fabric login ↗</button>
             <a href="https://drive.google.com/file/d/15J5yiun4R4zt5Qmz1gSlFdzlMhkkvcCM/view" target="_blank" rel="noopener">User manual ↗</a>
           </div>
         </div>
@@ -344,6 +377,33 @@
 <section id="updates">
   <div class="wrap">
     <div class="section-head">
+      <p class="eyebrow">Nov 22, 2026 &middot; Release note</p>
+      <h2 style="margin-top:12px;">Pricing &amp; Receiving Dashboards — Fabric account access</h2>
+    </div>
+
+    <div class="grid" style="grid-template-columns:1fr;">
+      <article class="card">
+        <div class="card-body">
+          <div class="card-title-row">
+            <h3>Download tables by signing in to our Fabric account</h3>
+            <span class="badge badge-live">New</span>
+          </div>
+          <p>Besides the Excel reports, you can now sign in to our Microsoft Fabric account and download tables straight from the Power BI reports. A <b>Fabric login</b> button has been added to the Price Integrity and Receiving Intelligence cards.</p>
+          <div class="rn-cred">
+            <b>Pricing Dashboard</b> — <a href="https://app.powerbi.com/groups/me/reports/f96e3b84-3eab-4689-b12a-1df81c3ae2de/bd6df5daa003e921d170?experience=power-bi" target="_blank" rel="noopener">Open in Fabric ↗</a><br>
+            <b>Receiving Dashboard</b> — <a href="https://app.powerbi.com/groups/me/reports/6dca8f81-7e30-47df-b29b-2744b0c0e325/b6f58377d227d1214809?experience=power-bi" target="_blank" rel="noopener">Open in Fabric ↗</a><br>
+            <b>ID:</b> <code>KaziSadat@sobughossain.com</code><br>
+            <b>Password:</b> <code>S@dat050</code>
+          </div>
+          <div class="tags">
+            <span class="tag">Fabric account</span><span class="tag">Table download</span><span class="tag">Pricing</span><span class="tag">Receiving</span>
+          </div>
+          <p>On the Insights Hub: click <b>Fabric login</b> under the dashboard card, copy the ID and password, then open the report in Fabric.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="section-head" style="margin-top:56px;">
       <p class="eyebrow">Oct 14, 2026 &middot; Release note</p>
       <h2 style="margin-top:12px;">Price Integrity Dashboard — Update</h2>
     </div>
@@ -450,5 +510,42 @@
   </div>
 </footer>
 
+
+<dialog class="fabric" id="fabricDlg">
+  <div class="fabric-in">
+    <h3 id="fabTitle">Fabric account</h3>
+    <p>Sign in with this account to download tables from the report.</p>
+    <div class="cred"><label>ID</label><div class="cred-row"><code id="fabId">KaziSadat@sobughossain.com</code><button class="mini" type="button" data-copy="fabId">Copy</button></div></div>
+    <div class="cred"><label>Password</label><div class="cred-row"><code id="fabPw" data-v="S@dat050">••••••••</code><button class="mini" type="button" id="fabShow">Show</button><button class="mini" type="button" id="fabCopyPw">Copy</button></div></div>
+    <div class="fabric-actions"><a class="primary" id="fabOpen" href="#" target="_blank" rel="noopener">Open in Fabric ↗</a><button type="button" id="fabClose">Close</button></div>
+  </div>
+</dialog>
+<script>
+(function(){
+  var L={pricing:{t:"Pricing Dashboard — Fabric account",u:"https://app.powerbi.com/groups/me/reports/f96e3b84-3eab-4689-b12a-1df81c3ae2de/bd6df5daa003e921d170?experience=power-bi"},receiving:{t:"Receiving Dashboard — Fabric account",u:"https://app.powerbi.com/groups/me/reports/6dca8f81-7e30-47df-b29b-2744b0c0e325/b6f58377d227d1214809?experience=power-bi"}};
+  var d=document.getElementById('fabricDlg'),pw=document.getElementById('fabPw'),sh=document.getElementById('fabShow');
+  function mask(){pw.textContent='••••••••';sh.textContent='Show';}
+  function copy(txt,btn){
+    var done=function(){var o=btn.textContent;btn.textContent='Copied';setTimeout(function(){btn.textContent=o;},1400);};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,done);}
+    else{var t=document.createElement('textarea');t.value=txt;document.body.appendChild(t);t.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(t);done();}
+  }
+  document.querySelectorAll('button.fab').forEach(function(b){
+    b.addEventListener('click',function(){
+      var c=L[b.dataset.fabric];
+      document.getElementById('fabTitle').textContent=c.t;
+      document.getElementById('fabOpen').href=c.u;
+      mask();d.showModal();
+    });
+  });
+  sh.addEventListener('click',function(){
+    if(sh.textContent==='Show'){pw.textContent=pw.dataset.v;sh.textContent='Hide';}else mask();
+  });
+  document.querySelector('[data-copy="fabId"]').addEventListener('click',function(e){copy(document.getElementById('fabId').textContent,e.currentTarget);});
+  document.getElementById('fabCopyPw').addEventListener('click',function(e){copy(pw.dataset.v,e.currentTarget);});
+  document.getElementById('fabClose').addEventListener('click',function(){d.close();});
+  d.addEventListener('click',function(e){if(e.target===d)d.close();});
+})();
+</script>
 </body>
 </html>
